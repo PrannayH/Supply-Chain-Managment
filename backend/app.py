@@ -89,9 +89,6 @@ def get_top_demanded_products():
     best_forecast = arima_forecast if arima_rmse < min(sarima_rmse, lstm_rmse) else (
     sarima_forecast if sarima_rmse < lstm_rmse else lstm_predictions)
 
-    # Assume the best model is selected based on the lowest RMSE
-    # For demonstration, let's select ARIMA as an example
-    # You should include the logic to select the best model
 
     # Initialize a dictionary to store forecasted demand for each Product ID
     product_forecasts = {}
@@ -126,7 +123,7 @@ def predict():
             {"Product ID": str(product_id), "Forecasted Demand": forecast}
             for product_id, forecast in top_products
         ]
-    }
+    }1
     return jsonify(response)
 
 if __name__ == '__main__':
